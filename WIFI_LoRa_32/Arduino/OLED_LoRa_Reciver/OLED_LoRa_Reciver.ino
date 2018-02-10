@@ -32,7 +32,7 @@
 #define RST     14   // GPIO14 -- SX127x's RESET
 #define DI00    26   // GPIO26 -- SX127x's IRQ(Interrupt Request)
 
-#define BAND    868E6  //you can set band here directly,e.g. 868E6,915E6
+#define BAND    433E6  //you can set band here directly,e.g. 433E6,868E6,915E6
 #define PABOOST true
 
 SSD1306 display(0x3c, 4, 15);

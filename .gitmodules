@@ -1,0 +1,3 @@
+[submodule "WIFI_LoRa_32/Arduino/hardware/espressif/esp32"]
+	path = WIFI_LoRa_32/Arduino/hardware/espressif/esp32
+	url = https://github.com/espressif/arduino-esp32.git

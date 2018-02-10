@@ -1,3 +1,6 @@
 [submodule "WIFI_LoRa_32/Arduino/hardware/espressif/esp32"]
 	path = WIFI_LoRa_32/Arduino/hardware/espressif/esp32
 	url = https://github.com/espressif/arduino-esp32.git
+[submodule "WIFI_LoRa_32/Arduino/hardware/heltec"]
+	path = WIFI_LoRa_32/Arduino/hardware/heltec
+	url = https://github.com/Heltec-Aaron-Lee/WiFi_Kit_series.git

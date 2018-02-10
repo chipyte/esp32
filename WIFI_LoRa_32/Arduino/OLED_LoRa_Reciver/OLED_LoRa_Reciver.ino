@@ -32,7 +32,7 @@
 #define RST     14   // GPIO14 -- SX127x's RESET
 #define DI00    26   // GPIO26 -- SX127x's IRQ(Interrupt Request)
 
-#define BAND    433E6  //you can set band here directly,e.g. 433E6,868E6,915E6
+#define BAND    868E6  //you can set band here directly,e.g. 433E6,868E6,915E6
 #define PABOOST true
 
 SSD1306 display(0x3c, 4, 15);
@@ -65,6 +65,7 @@ void cbk(int packetSize) {
 }
 
 void setup() {
+  pinMode(LED_BUILTIN, OUTPUT);
   pinMode(16,OUTPUT);
   digitalWrite(16, LOW);    // set GPIO16 low to reset OLED
   delay(50); 
@@ -92,8 +93,16 @@ void setup() {
   LoRa.receive();
 }
 
+unsigned long lastblink = millis();
 void loop() {
   int packetSize = LoRa.parsePacket();
-  if (packetSize) { cbk(packetSize);  }
+  if (packetSize) { 
+    cbk(packetSize);  
+    digitalWrite(LED_BUILTIN, HIGH);
+    lastblink = millis();
+  }
+  if (millis() - lastblink > 50) {
+    digitalWrite(LED_BUILTIN, LOW);
+  }
   delay(10);
 }

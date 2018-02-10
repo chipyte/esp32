@@ -32,7 +32,7 @@
 #define RST     14   // GPIO14 -- SX127x's RESET
 #define DI00    26   // GPIO26 -- SX127x's IRQ(Interrupt Request)
 
-#define BAND    433E6  //you can set band here directly,e.g. 433E6,868E6,915E6
+#define BAND    868E6  //you can set band here directly,e.g. 433E6,868E6,915E6
 #define PABOOST true
 
 unsigned int counter = 0;
@@ -52,7 +52,7 @@ void logo()
 void setup()
 {
   pinMode(16,OUTPUT);
-  pinMode(25,OUTPUT);
+  pinMode(LED_BUILTIN, OUTPUT);
   
   digitalWrite(16, LOW);    // set GPIO16 low to reset OLED
   delay(50); 
@@ -79,6 +79,7 @@ void setup()
   delay(1000);
 }
 
+unsigned long lastblink = millis();
 void loop()
 {
   display.clear();
@@ -96,8 +97,9 @@ void loop()
   LoRa.endPacket();
 
   counter++;
-  digitalWrite(25, HIGH);   // turn the LED on (HIGH is the voltage level)
-  delay(1000);                       // wait for a second
-  digitalWrite(25, LOW);    // turn the LED off by making the voltage LOW
-  delay(1000);                       // wait for a second
+  digitalWrite(LED_BUILTIN, HIGH);   // turn the LED on (HIGH is the voltage level)
+  delay(100);                       // wait for a second
+  digitalWrite(LED_BUILTIN, LOW);    // turn the LED off by making the voltage LOW
+  delay(10);                       // wait for a second
+ 
 }

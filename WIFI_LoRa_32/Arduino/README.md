@@ -2,6 +2,7 @@
 
 ## Links
 - https://blog.squix.org/
+- https://github.com/ThingPulse/esp8266-oled-ssd1306
 
 ## Pins
 ![esp32 LoRa Module pin layout][pins]

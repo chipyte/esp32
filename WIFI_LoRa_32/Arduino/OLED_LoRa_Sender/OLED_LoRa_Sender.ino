@@ -77,29 +77,29 @@ void setup()
   display.drawString(0, 0, "LoRa Initial success!");
   display.display();
   delay(1000);
-}
-
-unsigned long lastblink = millis();
-void loop()
-{
   display.clear();
   display.setTextAlignment(TEXT_ALIGN_LEFT);
   display.setFont(ArialMT_Plain_10);
-  
+}
+
+unsigned long lastblink = millis();
+void loop() {
+  display.clear();
   display.drawString(0, 0, "Sending packet: ");
   display.drawString(90, 0, String(counter));
   display.display();
 
   // send packet
   LoRa.beginPacket();
-  LoRa.print("hello ");
+  //LoRa.print("hello ");
   LoRa.print(counter);
   LoRa.endPacket();
 
   counter++;
+  /*
   digitalWrite(LED_BUILTIN, HIGH);   // turn the LED on (HIGH is the voltage level)
   delay(100);                       // wait for a second
   digitalWrite(LED_BUILTIN, LOW);    // turn the LED off by making the voltage LOW
   delay(10);                       // wait for a second
- 
+  */
 }

@@ -46,19 +46,20 @@ void logo(){
   display.display();
 }
 
+int counter = 0;
 void loraData(){
   display.clear();
   display.setTextAlignment(TEXT_ALIGN_LEFT);
   display.setFont(ArialMT_Plain_10);
-  display.drawString(0 , 15 , "Received "+ packSize + " bytes");
-  display.drawStringMaxWidth(0 , 26 , 128, packet);
+  display.drawString(0 , 15 , String(counter++) + "/" + packet);
+  //display.drawStringMaxWidth(0 , 26 , 128, packet);
   display.drawString(0, 0, rssi);  
   display.display();
 }
 
 void cbk(int packetSize) {
   packet ="";
-  packSize = String(packetSize,DEC);
+  packSize = String(packetSize, DEC);
   for (int i = 0; i < packetSize; i++) { packet += (char) LoRa.read(); }
   rssi = "RSSI " + String(LoRa.packetRssi(), DEC) ;
   loraData();
@@ -98,11 +99,13 @@ void loop() {
   int packetSize = LoRa.parsePacket();
   if (packetSize) { 
     cbk(packetSize);  
-    digitalWrite(LED_BUILTIN, HIGH);
-    lastblink = millis();
+    //digitalWrite(LED_BUILTIN, HIGH);
+    //lastblink = millis();
   }
+  /*
   if (millis() - lastblink > 50) {
     digitalWrite(LED_BUILTIN, LOW);
   }
+  */
   delay(10);
 }

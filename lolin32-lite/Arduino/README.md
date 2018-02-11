@@ -11,8 +11,8 @@
 
 
 [frontside]: front-side.jpg
-[measurementschem]: voltage measurement_schem.svg
-[measurementbb]: voltage measurement_bb.svg
+[measurementschem]: voltage_measurement_schem.svg
+[measurementbb]: voltage_measurement_bb.svg
 
 
 

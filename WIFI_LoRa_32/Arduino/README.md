@@ -13,5 +13,7 @@
 
 ## Pins
 ![esp32 LoRa Module pin layout][pins]
+![esp32 LoRa Module back and front view][backandfront]
 
 [pins]: esp32_lora_wifi_pins.jpg
+[backandfront]: esp32_lora_wifi_back_front.jpg

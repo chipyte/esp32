@@ -3,16 +3,16 @@
 ![Front Side / pin layout][frontside]
 
 ## Measure battery voltage
-![schema][measurement_schem]
+![Schema][measurementschem]
 
-![screen][measurement_bb]
+![measurement][measurementbb]
 
 
 
 
 [frontside]: front-side.jpg
-[measurement_schem]: voltage measurement_schem.svg
-[measurement_bb]: voltage measurement_bb.svg
+[measurementschem]: voltage measurement_schem.svg
+[measurementbb]: voltage measurement_bb.svg
 
 
 
